@@ -24,13 +24,9 @@ xp = np.linspace(-4, 10, 100)
 plt.plot(x, y,'.', xp, p1(xp),'.', xp, p2(xp),'.', xp, p3(xp), '-', xp, p4(xp), '-', xp, p5(xp), '-')
 plt.ylim(-5,5)
 plt.savefig("e:\\12.png")
+#plt.show()
 '''
-a1=[]
-a2=[]
-ind1=0
-ind2=0
-now_a1=True
-for i in range(100):
+def gen_poly_ind(i,now_a1=True)
     if now_a1:
         a1.append(i)
         if len(a1)>4:
@@ -42,7 +38,8 @@ for i in range(100):
     now_a1=not now_a1
     print(a1)
     print(a2)
-#plt.show()
+	
+	
 '''
 import sys
 import math
