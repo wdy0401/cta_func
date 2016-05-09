@@ -4,11 +4,16 @@ Created on Thu May  5 20:21:47 2016
 
 @author: NUC
 """
+
+#def poly6():
 import numpy as np
+import random as rd
 import matplotlib.pyplot as plt
-'''
-x = np.array([0.0, 1.0, 2.0, 3.0,  4.0,  5.0])
-y = np.array([0.0, 0.8, 0.9, 0.1, -0.8, -1.0])
+
+#x = np.array([0.0, 1.0, 2.0, 3.0,  4.0,  5.0])
+#y = np.array([0.0, 0.8, 0.9, 0.1, -0.8, -1.0])
+x=np.linspace(1,100,100)
+y=np.array([rd.randint(0, 100) for x in range(100)])
 
 z1 = np.polyfit(x, y, 1)
 z2 = np.polyfit(x, y, 2)
@@ -20,28 +25,38 @@ p2= np.poly1d(z2)
 p3= np.poly1d(z3)
 p4= np.poly1d(z4)
 p5= np.poly1d(z5)
-xp = np.linspace(-4, 10, 100)
+xp = np.linspace(-10, 110, 100)
 plt.plot(x, y,'.', xp, p1(xp),'.', xp, p2(xp),'.', xp, p3(xp), '-', xp, p4(xp), '-', xp, p5(xp), '-')
-plt.ylim(-5,5)
-plt.savefig("e:\\12.png")
-'''
-a1=[]
-a2=[]
-ind1=0
-ind2=0
-now_a1=True
-for i in range(100):
-    if now_a1:
-        a1.append(i)
-        if len(a1)>4:
-            a1.pop(0)
-    else:
-        a2.append(i)
-        if len(a2)>4:
-            a2.pop(0)
-    now_a1=not now_a1
-    print(a1)
-    print(a2)
+plt.ylim(-10,100)
+mn=[p1(101),p2(101),p3(101),p4(101),p5(101)]
+print(mn)
+print("mean all",y.mean()," std",y.std())
+print("mean pd",np.mean(np.array(mn))," std ",np.std(np.array(mn)))
+print("d1 ",p1(101))
+#    help(xp)
+#    plt.savefig("e:\\12.png")
+#poly6()
+
+def poly2():
+    import numpy as np
+    import matplotlib.pyplot as plt
+    a1=[]
+    a2=[]
+    ind1=0
+    ind2=0
+    now_a1=True
+    for i in range(100):
+        if now_a1:
+            a1.append(i)
+            if len(a1)>4:
+                a1.pop(0)
+        else:
+            a2.append(i)
+            if len(a2)>4:
+                a2.pop(0)
+        now_a1=not now_a1
+        print(a1)
+        print(a2)
 #plt.show()
 '''
 import sys
