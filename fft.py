@@ -10,8 +10,12 @@ import numpy as np
 import random as rd
 import matplotlib.pyplot as plt
 
-#x = np.array([0.0, 1.0, 2.0, 3.0,  4.0,  5.0])
-#y = np.array([0.0, 0.8, 0.9, 0.1, -0.8, -1.0])
+#参数选项  
+#!    多少个数据
+#    跑多少次
+#评价标准
+#    使用1-6全部六次多项式？
+#!    这6个多项式预测结果的标准差与数据标准差的比值    
 x=np.linspace(1,100,100)
 y=np.array([rd.randint(0, 100) for x in range(100)])
 
@@ -29,10 +33,11 @@ xp = np.linspace(-10, 110, 100)
 plt.plot(x, y,'.', xp, p1(xp),'.', xp, p2(xp),'.', xp, p3(xp), '-', xp, p4(xp), '-', xp, p5(xp), '-')
 plt.ylim(-10,100)
 mn=[p1(101),p2(101),p3(101),p4(101),p5(101)]
-print(mn)
-print("mean all",y.mean()," std",y.std())
-print("mean pd",np.mean(np.array(mn))," std ",np.std(np.array(mn)))
-print("d1 ",p1(101))
+
+print(mn,end="")
+print("mean all",y.mean()," std",y.std(),end="")
+print("mean_pd,",np.mean(np.array(mn)),",std,",np.std(np.array(mn)),end="",sep="")
+print("d1 ",p1(101),end="")
 #    help(xp)
 #    plt.savefig("e:\\12.png")
 #poly6()
